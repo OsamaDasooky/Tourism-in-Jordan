@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import { Home } from "./components/Home";
 import Footer from "./components/Footer";
 import Tour from "./components/Tour";
+import UseEffectTask from "./components/UseEffectTask";
+import UseEffect from "./components/UseEffect";
 
 function App() {
   const [tours] = useState([
@@ -48,13 +50,25 @@ function App() {
         "https://austria-forum.org/attach/Geography/Asia/Jordan/Special_Information/Aqaba%2C_Jordan/scaled-900x555-02_Aqabe.jpg",
     },
   ]);
+  const [test, setTest] = useState(0);
 
+  function handleClickFromHeader(newValue) {
+    setTest(newValue);
+  }
   return (
     <>
       <Header />
       <Routes>
         <Route exact path="/" element={<Home data={tours} />} />
+        <Route
+          exact
+          path="/useEffect"
+          element={
+            <UseEffect stateFromApp={test} onClick={handleClickFromHeader} />
+          }
+        />
         <Route exact path="/tour/:id" element={<Tour data={tours} />} />
+        <Route exact path="/useEffect/task" element={<UseEffectTask />} />
       </Routes>
       <Footer />
     </>

@@ -28,7 +28,14 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/function" className="nav-link"></NavLink>
+              <NavLink to="/useEffect" className="nav-link">
+                useEffect
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/useEffect/task" className="nav-link">
+                useEffect task
+              </NavLink>
             </li>
           </ul>
         </div>
