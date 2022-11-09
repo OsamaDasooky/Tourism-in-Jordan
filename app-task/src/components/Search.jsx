@@ -1,11 +1,11 @@
 import React from "react";
 
-export const Search = ({ handleSearch, handlePrice }) => {
+export const Search = ({ handleSearch, handlePrice, price, totalBooks }) => {
   return (
     <div className="row justify-content-center align-content-center">
       <div className="col-lg-10">
         <input
-          className="form-control  w-25 col-lg-5"
+          className="form-control  w-25 col-lg-5 d-inline-block"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -14,7 +14,7 @@ export const Search = ({ handleSearch, handlePrice }) => {
 
         <input
           type="range"
-          className="form-range  mx-auto my-3  w-50 "
+          className="form-range  ms-3 my-3  w-25 "
           min="0"
           max="35"
           step="1"
@@ -32,6 +32,10 @@ export const Search = ({ handleSearch, handlePrice }) => {
           rest
         </span>
       </div>
+      <p className="text-capitalize m-3 col-lg-10 d-flex">
+        current prices are between <b> {price} </b> and 35 JD total results is
+        <b>{totalBooks}</b>
+      </p>
     </div>
   );
 };
